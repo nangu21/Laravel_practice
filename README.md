@@ -1,6 +1,6 @@
 ## Laravelの練習
 #### Unitテストに関するメモ
-###### 前提事項
+##### 前提事項
 ```
 tests
 ├ Feature
@@ -22,5 +22,33 @@ Available test(s):
  - Tests\Feature\ExampleTest::testBasicTest
  - Tests\Feature\HelloTest::testHello
 ```
-###### Laravel8へのアップデートによるエラー
+##### Laravel8へのアップデートによるエラー
 指定アドレスへのアクセステストを実行したところ、エラーが発生。
+```HelloTest.php
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+use App\User;
+
+class HelloTest extends TestCase
+{
+ use RefreshDataBase;
+ 
+ public function testHello() {
+  $this->assertTrue(true);
+  
+  $response = $this->get('/');
+  $response->assertStatus(200);
+
+  $response = $this->get('/home');
+  $response->assertStatus(302);
+  
+  $user = factory(User::class)->create();
+  $response = $this->actingAs($user)->get('/home');
+  $response->assertStatus(200);
+  
+  $response = $this->get('/no_route');
+  $response->assertStatus(404);
+ }
+}
+```
