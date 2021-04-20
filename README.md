@@ -28,7 +28,7 @@ Available test(s):
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\User;
+use App\Models\User;
 
 class HelloTest extends TestCase
 {
@@ -52,5 +52,22 @@ class HelloTest extends TestCase
  }
 }
 ```
-上記ファイルの実行結果↓
+上記ファイルの実行結果が以下。
+```console
+$ vendor/bin/phpunit tests/Feature/HelloTest.php
 
+PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
+
+E                                                                   1 / 1 (100%)
+
+Time: 00:00.218, Memory: 24.00 MB
+
+There was 1 error:
+
+1) Tests\Feature\HelloTest::testHello
+Error: Call to undefined function Tests\Feature\factory()
+```
+調べたところ、laravel8ではfactory()の表記の仕方が変更になっていた。したがって`<?php $user = factory(User::class)->create();?>`の部分を以下のように変更。
+```HelloTest.php
+$user = User::factory()->create();
+```
