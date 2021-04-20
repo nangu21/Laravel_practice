@@ -24,7 +24,7 @@ Available test(s):
  - Tests\Feature\HelloTest::testHello
 ```
 ### ¶Laravel8へのバージョンアップによるエラー
-指定アドレスへのアクセステストを実行したところ、エラーが発生した。
+指定アドレスへの*アクセステスト*を実行したところ、エラーが発生した。
 ```HelloTest.php
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -89,7 +89,7 @@ Time: 00:00.310, Memory: 26.00 MB
 OK (1 test, 5 assertions)
 ```
 
-データベーステストでも同様。`factory(Person::class)->create()`は`Person::factory()->create()`に修正して実行する。
+*データベーステスト*でも同様。`factory(Person::class)->create()`は`Person::factory()->create()`に修正して実行する。
 ```DataHelloTest.php
 <?php
 
