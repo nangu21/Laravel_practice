@@ -22,7 +22,7 @@ Available test(s):
  - Tests\Feature\ExampleTest::testBasicTest
  - Tests\Feature\HelloTest::testHello
 ```
-#### ¶Laravel8へのバージョンアップによるエラー
+### ¶Laravel8へのバージョンアップによるエラー
 指定アドレスへのアクセステストを実行したところ、エラーが発生した。
 ```HelloTest.php
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -90,3 +90,4 @@ OK (1 test, 5 assertions)
 ### ¶その他注意事項
 #### ①モデルファイルのパス変更
 Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならない。
+#### ②
