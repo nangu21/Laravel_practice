@@ -129,6 +129,8 @@ Time: 00:00.137, Memory: 20.00 MB
 
 OK (1 test, 1 assertion)
 ```
+テスト用のsqliteデータベースに無事格納されていることも確認できた。
+![テスト用データベース](db_test_result.png)
 ### ¶その他注意事項
 #### モデルファイルのパス変更
 Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならない。
