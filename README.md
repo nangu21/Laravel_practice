@@ -1,6 +1,6 @@
 ## Laravelの練習
-#### Unitテストに関するメモ
-##### ¶前提事項
+### Unitテストに関するメモ
+#### ¶前提事項
 ```
 tests
 ├ Feature
@@ -22,7 +22,7 @@ Available test(s):
  - Tests\Feature\ExampleTest::testBasicTest
  - Tests\Feature\HelloTest::testHello
 ```
-##### ¶Laravel8へのバージョンアップによるエラー
+#### ¶Laravel8へのバージョンアップによるエラー
 指定アドレスへのアクセステストを実行したところ、エラーが発生。
 ```HelloTest.php
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -87,6 +87,6 @@ Time: 00:00.310, Memory: 26.00 MB
 
 OK (1 test, 5 assertions)
 ```
-##### ¶その他注意事項
+#### ¶その他注意事項
 ##### ①モデルファイルのパス変更
-Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに
+Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`
