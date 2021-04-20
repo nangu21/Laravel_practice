@@ -43,7 +43,7 @@ class HelloTest extends TestCase
   $response = $this->get('/home');
   $response->assertStatus(302);
   
-  $user = factory(User::class)->create();
+  $user = factory(User::class)->create();  //ここが問題
   $response = $this->actingAs($user)->get('/home');
   $response->assertStatus(200);
   
@@ -103,7 +103,7 @@ class DataHelloTest extends TestCase
 {
     public function test_data()
     {
-        Person::factory()->create([
+        Person::factory()->create([  //ここを変更
             'name' => 'XXX',
             'mail' => 'YYY@ZZZ.com',
             'age' => '123',
@@ -133,4 +133,4 @@ OK (1 test, 1 assertion)
 ![テスト用データベース](db_test_result.png)
 ### ¶その他注意事項
 #### モデルファイルのパス変更
-Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならない。
+Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならないことに注意。
