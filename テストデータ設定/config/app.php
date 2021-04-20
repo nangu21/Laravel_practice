@@ -11,4 +11,4 @@
     */
 
     //'faker_locale' => 'en_US',
-    'faker_locale' => 'ja_JP',
+    'faker_locale' => 'ja_JP', //生成するデータを日本語版に設定
