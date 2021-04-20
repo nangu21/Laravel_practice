@@ -75,7 +75,7 @@ $user = factory(User::class)->create();
 ```HelloTest.php
 $user = User::factory()->create();
 ```
-修正後の実行結果が以下。無事テストを通過しました。
+修正後の実行結果が以下。無事テストを通過。
 ```console
 $ vendor/bin/phpunit tests/Feature/HelloTest.php
 
@@ -87,3 +87,5 @@ Time: 00:00.310, Memory: 26.00 MB
 
 OK (1 test, 5 assertions)
 ```
+##### ¶Laravel8アップデート後のその他注意事項
+①
