@@ -1,6 +1,6 @@
 ## Laravelの練習
 #### Unitテストに関するメモ
-##### 前提事項
+##### ¶前提事項
 ```
 tests
 ├ Feature
@@ -22,7 +22,7 @@ Available test(s):
  - Tests\Feature\ExampleTest::testBasicTest
  - Tests\Feature\HelloTest::testHello
 ```
-##### Laravel8へのアップデートによるエラー
+##### ¶Laravel8へのアップデートによるエラー
 指定アドレスへのアクセステストを実行したところ、エラーが発生。
 ```HelloTest.php
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -52,3 +52,5 @@ class HelloTest extends TestCase
  }
 }
 ```
+上記ファイルの実行結果↓
+
