@@ -87,6 +87,35 @@ Time: 00:00.310, Memory: 26.00 MB
 
 OK (1 test, 5 assertions)
 ```
+データベーステストでも同様。
+```DataHelloTest.php
+<?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+use App\Models\Person;
+
+class DataHelloTest extends TestCase
+{
+    public function test_data()
+    {
+        Person::factory()->create([
+            'name' => 'XXX',
+            'mail' => 'YYY@ZZZ.com',
+            'age' => '123',
+        ]);
+
+        $this->assertDatabaseHas('people', [
+            'name' => 'XXX',
+            'mail' => 'YYY@ZZZ.com',
+            'age' => '123',
+        ]);
+    }
+}
+```
 ### ¶その他注意事項
 #### モデルファイルのパス変更
 Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならない。
