@@ -87,7 +87,8 @@ Time: 00:00.310, Memory: 26.00 MB
 
 OK (1 test, 5 assertions)
 ```
-データベーステストでも同様。
+
+データベーステストでも同様。`factory(Person::class)->create()`は`Person::factory()->create()`に修正して実行する。
 ```DataHelloTest.php
 <?php
 
@@ -115,6 +116,18 @@ class DataHelloTest extends TestCase
         ]);
     }
 }
+```
+問題なくテストを通過。
+```console
+$ vendor/bin/phpunit tests/Feature/DataHelloTest.php
+
+PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 00:00.137, Memory: 20.00 MB
+
+OK (1 test, 1 assertion)
 ```
 ### ¶その他注意事項
 #### モデルファイルのパス変更
