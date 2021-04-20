@@ -22,7 +22,7 @@ Available test(s):
  - Tests\Feature\ExampleTest::testBasicTest
  - Tests\Feature\HelloTest::testHello
 ```
-##### ¶Laravel8へのアップデートによるエラー
+##### ¶Laravel8へのバージョンアップによるエラー
 指定アドレスへのアクセステストを実行したところ、エラーが発生。
 ```HelloTest.php
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -87,5 +87,6 @@ Time: 00:00.310, Memory: 26.00 MB
 
 OK (1 test, 5 assertions)
 ```
-##### ¶Laravel8アップデート後のその他注意事項
-①
+##### ¶その他注意事項
+①モデルファイルのパス変更
+Laravel8バージョンアップにより、これまで/appの
