@@ -1,5 +1,5 @@
-## 🍕Laravelの練習
-### 🍫Unitテストに関するメモ
+# 🍕Laravelの練習
+## 🍫Unitテストに関するメモ
 ### ¶前提事項
 ```
 tests
@@ -136,21 +136,22 @@ OK (1 test, 1 assertion)
 #### モデルファイルのパス変更
 Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならないことに注意。
 
-### 🍰エラーログとSlack連携に関するメモ
+## 🍰エラーログとSlack連携に関するメモ
 LaravelのエラーログとSlack連携は以下の2ステップで簡単に実装できた。
-##### 1. SlackにてIncoming WebHooksを追加
-##### 2. アプリケーションのcongigとenvファイルを修正
+#### 1. SlackにてIncoming WebHooksを追加
+#### 2. アプリケーションのcongigとenvファイルを修正
 
 ### ¶実際の流れ
 Slack側でIncoming WebHooksを追加し、インテグレーション用のURlを発行して
 ![IncomingWebHooks](add_app.png)
+
 アプリケーション側の.envファイルに`LOG_SLACK_WEBHOOK_URL=インテグレーション用URL`を追加する
 ```.env
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
 LOG_SLACK_WEBHOOK_URL=https://hooks.slack.com/... //ここを追加
 ```
-そしてconfigフォルダのlogging/phpファイルを編集して完了！
+そしてconfigフォルダのlogging/phpファイルを編集して完了
 ```logging.php
 'channels' => [
         'stack' => [
@@ -163,7 +164,9 @@ LOG_SLACK_WEBHOOK_URL=https://hooks.slack.com/... //ここを追加
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
             'username' => 'Laravel Log', //Slackメッセージで表示される発言者名
-            'emoji' => ':boom:', //Slackメッセージで表示される絵文字
+            'emoji' => ':space_invader:', //Slackメッセージで表示される絵文字
             'level' => env('LOG_LEVEL', 'critical'), //通知するエラーレベル
         ],
 ```
+通知を受け取ることができた
+![エラーログ通知](slack_message.png)
