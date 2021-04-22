@@ -1,6 +1,6 @@
 ## 🍕Laravelの練習
-### ①Unitテストに関するメモ
-### 🍫前提事項
+### 🍫Unitテストに関するメモ
+### ¶前提事項
 ```
 tests
 ├ Feature
@@ -23,7 +23,7 @@ Available test(s):
  - Tests\Feature\ExampleTest::testBasicTest
  - Tests\Feature\HelloTest::testHello
 ```
-### 🍰Laravel8へのバージョンアップによるエラー
+### ¶Laravel8へのバージョンアップによるエラー
 指定アドレスへの**アクセステスト**を実行したところ、エラーが発生した。
 ```HelloTest.php
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -132,15 +132,38 @@ OK (1 test, 1 assertion)
 ```
 テスト用のsqliteデータベースに無事格納されていることも確認できた。
 ![テスト用データベース](db_test_result.png)
-### 🍨その他注意事項
+### ¶その他注意事項
 #### モデルファイルのパス変更
 Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならないことに注意。
 
-### ②エラーログとSlack連携に関するメモ
+### 🍰エラーログとSlack連携に関するメモ
 LaravelのエラーログとSlack連携は以下の2ステップで簡単に実装できた。
-1. SlackにてIncoming WebHooksを追加
-2. アプリケーションのcongigとenvファイルを修正
-### 🍩実際の流れ
+##### 1. SlackにてIncoming WebHooksを追加
+##### 2. アプリケーションのcongigとenvファイルを修正
+
+### ¶実際の流れ
 Slack側でIncoming WebHooksを追加し、インテグレーション用のURlを発行して
 ![IncomingWebHooks](add_app.png)
-アプリケーション
+アプリケーション側の.envファイルに`LOG_SLACK_WEBHOOK_URL=インテグレーション用URL`を追加する
+```.env
+LOG_CHANNEL=stack
+LOG_LEVEL=debug
+LOG_SLACK_WEBHOOK_URL=https://hooks.slack.com/... //ここを追加
+```
+そしてconfigフォルダのlogging/phpファイルを編集して完了！
+```logging.php
+'channels' => [
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['single', 'slack'], //slackを追加
+            'ignore_exceptions' => false,
+        ],
+        
+        'slack' => [
+            'driver' => 'slack',
+            'url' => env('LOG_SLACK_WEBHOOK_URL'),
+            'username' => 'Laravel Log', //Slackメッセージで表示される発言者名
+            'emoji' => ':boom:', //Slackメッセージで表示される絵文字
+            'level' => env('LOG_LEVEL', 'critical'), //通知するエラーレベル
+        ],
+```
