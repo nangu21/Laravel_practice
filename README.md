@@ -140,21 +140,21 @@ Laravel8バージョンアップにより、これまで/appの直下に配置�
 
 ## 🍰エラーログとSlack連携に関するメモ
 LaravelのエラーログとSlack連携は以下の2ステップで簡単に実装できた。
-: 1. SlackにてIncoming WebHooksを追加
-: 2. アプリケーションのcongigとenvファイルを修正
+:1. SlackにてIncoming WebHooksを追加
+:2. アプリケーションのcongigとenvファイルを修正
 
 ### ¶実際の流れ
-Slack側でIncoming WebHooksを追加し、インテグレーション用のURlを発行して
+①Slack側でIncoming WebHooksを追加し、インテグレーション用のURlを発行して
 
 ![IncomingWebHooks](add_app.png)
 
-アプリケーション側の.envファイルに`LOG_SLACK_WEBHOOK_URL=インテグレーション用URL`を追加する
+②アプリケーション側の.envファイルに`LOG_SLACK_WEBHOOK_URL=インテグレーション用URL`を追加する
 ```.env
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
 LOG_SLACK_WEBHOOK_URL=https://hooks.slack.com/... //ここを追加
 ```
-configフォルダのlogging/phpファイルを編集して完了！
+③configフォルダのlogging/phpファイルを編集して完了！
 
 ```logging.php
 'channels' => [
@@ -173,6 +173,6 @@ configフォルダのlogging/phpファイルを編集して完了！
         ],
 ```
 
-無事に通知を受け取ることができた
+無事に通知を受け取ることができた。
 
 ![エラーログ通知](slack_message.png)
