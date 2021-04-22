@@ -136,12 +136,12 @@ OK (1 test, 1 assertion)
 #### モデルファイルのパス変更
 Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならないことに注意。
 
-...
+***
 
 ## 🍰エラーログとSlack連携に関するメモ
 LaravelのエラーログとSlack連携は以下の2ステップで簡単に実装できた。
-#### 1. SlackにてIncoming WebHooksを追加
-#### 2. アプリケーションのcongigとenvファイルを修正
+: #### 1. SlackにてIncoming WebHooksを追加
+: #### 2. アプリケーションのcongigとenvファイルを修正
 
 ### ¶実際の流れ
 Slack側でIncoming WebHooksを追加し、インテグレーション用のURlを発行して
