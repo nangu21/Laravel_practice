@@ -139,9 +139,10 @@ Laravel8バージョンアップにより、これまで/appの直下に配置�
 ***
 
 ## 🍰エラーログとSlack連携に関するメモ
-LaravelのエラーログとSlack連携は以下の2ステップで簡単に実装できた。
+LaravelのエラーログとSlack連携は以下の3ステップで簡単に実装できた。
 - SlackにてIncoming WebHooksを追加
-- アプリケーションのcongigとenvファイルを修正
+- アプリケーションのenvファイルを修正
+- アプリケーションのlogging.phpファイルを修正
 
 ### ¶実際の流れ
 ①Slack側でIncoming WebHooksを追加し、インテグレーション用のURlを発行して
