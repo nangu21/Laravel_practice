@@ -168,5 +168,6 @@ LOG_SLACK_WEBHOOK_URL=https://hooks.slack.com/... //ここを追加
             'level' => env('LOG_LEVEL', 'critical'), //通知するエラーレベル
         ],
 ```
-通知を受け取ることができた
+無事に通知を受け取ることができた
+
 ![エラーログ通知](slack_message.png)
