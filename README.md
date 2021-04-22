@@ -1,5 +1,5 @@
 ## 🍕Laravelの練習
-### Unitテストに関するメモ
+### 1.Unitテストに関するメモ
 ### 🍫前提事項
 ```
 tests
@@ -23,7 +23,7 @@ Available test(s):
  - Tests\Feature\ExampleTest::testBasicTest
  - Tests\Feature\HelloTest::testHello
 ```
-### 🥞Laravel8へのバージョンアップによるエラー
+### 🍰Laravel8へのバージョンアップによるエラー
 指定アドレスへの**アクセステスト**を実行したところ、エラーが発生した。
 ```HelloTest.php
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -135,3 +135,5 @@ OK (1 test, 1 assertion)
 ### 🍨その他注意事項
 #### モデルファイルのパス変更
 Laravel8バージョンアップにより、これまで/appの直下に配置されていたモデルファイルが/app/Modelsのなかに格納されることになった。したがってファイルパスも`use App\User;`ではなく`use App\Models\User;`としなければならないことに注意。
+
+### 1.Slack連携に関するメモ
