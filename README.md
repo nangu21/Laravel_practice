@@ -22,14 +22,14 @@ Laravel Framework 8.40.0 (確認方法: $ php artisan ―version)
 - 注意点：Jetstreamは新しいアプリケーションにのみインストールする。既存のものにインストールすると予期せぬ動作、問題が発生する。(マニュアルより)
 - livewire vs inertia：フロントエンドをPHP(Blade.php)で実装するならlivewire、vue.jsならinertiaを使う
 ```console
-|- $ laravel new [アプリケーション名]
+|- $ laravel new [アプリケーション名] //アプリケーションの雛形作成とJetstreamのインストールを別々に行う場合
 |	|-> $ composer require Laravel/jetstream //Jetstreamのインストール
 |	|-> $ php artisan jetstream:install livewire
 |		又は $ php artisan jetstream:install livewire ―teams
 |		又は $ php artisan jetstream:install inertia
 |		又は $ php artisan jetstream:install inertia ―teams
 |
-|- $ laravel new [アプリケーション名] ―jet  //アプリケーションの雛形作成と同時にJetstreamインストール
+|- $ laravel new [アプリケーション名] ―jet  //雛形作成と同時にJetstreamインストールする場合
 	|->
 	|	    |     |         |
 	|	    |,---.|--- ,---.|--- ,---.,---.,---.,-.-.
