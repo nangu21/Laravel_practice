@@ -193,8 +193,9 @@ Laravel Framework 8.40.0 (アプリ内$ php artisan ―version)
 **認証ライブラリ**
 - [Jetstream](https://jetstream.laravel.com/2.x/installation.html)を使う
 - Laravel/UI：バージョン8で非推奨。今後のサポートにも不安あり
-- Breeze：必要最低限の認証機能があればいい時
-- Fortify：いろんな認証機能を試してみたいがJetstreamでは過剰な時
+- Breeze：必要最低限の認証機能があればいい時はコレ
+- Fortify：いろんな認証機能を試してみたいがJetstreamでは過剰な時はコレ
+
 **導入**
 - 注意点：Jetstreamは新しいアプリケーションにのみインストールする。既存のものにインストールすると予期せぬ動作、問題が発生する。(マニュアルより)
 - livewire vs inertia：フロントエンドをPHP(Blade.php)で実装するならlivewire、vue.jsならinertiaを使う
