@@ -42,6 +42,7 @@ Laravel Framework 8.40.0 (確認方法: $ php artisan ―version)
 	|
 	└>	Will your application use teams? (yes/no) [no]:
 	   	> team機能(各ユーザを任意のチームに割り当てることができる)を使う場合はyes
+
 $ npm install //npmの依存関係をインストール(npmコマンドがない場合、node.jsをインストールする)
 $ npm run dev
 ```
