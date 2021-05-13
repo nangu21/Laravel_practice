@@ -52,6 +52,7 @@ $ npm run dev
 ```database.php
 変更前:
 ‘default’ => env(‘DB_CONNECTION’, ‘mysql’),
+
 変更後:
 ’default’ => env(‘DB_CONNECTION’, ‘sqlite’),
 ```
@@ -64,6 +65,7 @@ DB_PORT=***
 DB_DATABASE=***
 DB_USERNAME=***
 DB_PASSWORD=
+
 変更後:
 DB_CONNECTION=sqlite
 ```
