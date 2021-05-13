@@ -9,7 +9,7 @@ Laravel Framework 8.40.0
 ```
 ちなみに、それぞれのバージョン確認方法は以下
 ```console
-$ php -v	//PHP
+$ php -v		//PHP
 $ composer --version	//Composer
 $ php artisan -version	//Laravel Framework
 ```
