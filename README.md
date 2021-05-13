@@ -183,7 +183,7 @@ LOG_SLACK_WEBHOOK_URL=https://hooks.slack.com/... //ここを追加
 macOS Big Sur 11.3.1
 PHP 7.4.19
 Composer 2.0.13
-Laravel Framework 8.40.0 (アプリ内$ php artisan ―version)
+Laravel Framework 8.40.0 (確認方法: $ php artisan ―version)
 ```
 
 **DB**
