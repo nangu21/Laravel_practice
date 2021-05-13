@@ -5,7 +5,13 @@
 macOS Big Sur 11.3.1
 PHP 7.4.19
 Composer 2.0.13
-Laravel Framework 8.40.0 (確認方法: $ php artisan ―version)
+Laravel Framework 8.40.0
+```
+ちなみに、それぞれのバージョン確認方法は以下
+```console
+$ php -v	//PHP
+$ composer --version	//Composer
+$ php artisan -version	//Laravel Framework
 ```
 
 **DB**
