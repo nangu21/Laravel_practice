@@ -67,8 +67,9 @@ DB_PASSWORD=
 変更後:
 DB_CONNECTION=sqlite
 ```
+- 以上2つのDB設定情報を変更した後、usersテーブルを自動生成する
 ```console
-$ php artisan migrate //usersテーブルが自動生成される
+$ php artisan migrate 
 ```
 
 - サーバーを実行してトップページを表示する
