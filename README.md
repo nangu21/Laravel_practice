@@ -178,8 +178,8 @@ LOG_SLACK_WEBHOOK_URL=https://hooks.slack.com/... //ここを追加
 ![エラーログ通知](slack_message.png)
 
 ## 🧁Jetstream導入に関するメモ
-```
 **環境**
+```
 macOS Big Sur 11.3.1
 PHP 7.4.19
 Composer 2.0.13
@@ -199,48 +199,48 @@ Laravel Framework 8.40.0 (アプリ内$ php artisan ―version)
 - 注意点：Jetstreamは新しいアプリケーションにのみインストールする。既存のものにインストールすると予期せぬ動作、問題が発生する。(マニュアルより)
 - livewire vs inertia：フロントエンドをPHP(Blade.php)で実装するならlivewire、vue.jsならinertiaを使う
 ```console
-|- laravel new [アプリケーション名]
-|	|-> composer require Laravel/jetstream //Jetstreamのインストール
-|	|-> php artisan jetstream:install livewire
-|		又は php artisan jetstream:install livewire ―teams
-|		又は php artisan jetstream:install inertia
-|		又は php artisan jetstream:install inertia ―teams
+|- $ laravel new [アプリケーション名]
+|	|-> $ composer require Laravel/jetstream //Jetstreamのインストール
+|	|-> $ php artisan jetstream:install livewire
+|		又は $ php artisan jetstream:install livewire ―teams
+|		又は $ php artisan jetstream:install inertia
+|		又は $ php artisan jetstream:install inertia ―teams
 |
-|- laravel new [アプリケーション名] ―jet  //アプリケーションの雛形作成と同時にJetstreamインストール
+|- $ laravel new [アプリケーション名] ―jet  //アプリケーションの雛形作成と同時にJetstreamインストール
 	|->
 	|	    |     |         |
 	|	    |,---.|--- ,---.|--- ,---.,---.,---.,-.-.
 	|	    ||---'|    `---.|    |    |---',---|| | |
 	|	`---'`---'`---'`---'`---'`    `---'`---^` ' '
 	|	Which Jetstream stack do you prefer?
- |	[0] livewire
- | [1] inertia
+ 	|	[0] livewire
+ 	| 	[1] inertia
 	|	> livewireを使う場合は0, inertiaを使う場合は1
 	|
 	|->	Will your application use teams? (yes/no) [no]:
 	   	> チーム機能(各ユーザを任意のチームに割り当てることができる)を使う場合はyes
-- npm install //npmの依存関係をインストール。npmコマンドがない場合、node.jsをインストールする
-- npm run dev
+$ npm install //npmの依存関係をインストール(npmコマンドがない場合、node.jsをインストールする)
+$ npm run dev
 ```
 
 **Usersテーブルを生成する**
 - DB設定情報が用意されている`/config/database.php`を開いてデフォルトの`DB_CONNECTION`を変更
 ```database.php
-変更前
+変更前:
 ‘default’ => env(‘DB_CONNECTION’, ‘mysql’),
-変更後
+変更後:
 ’default’ => env(‘DB_CONNECTION’, ‘sqlite’),
 ```
 - .envファイルの環境変数を変更する。
 ```.env
-変更前
+変更前:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=test
 DB_USERNAME=root
 DB_PASSWORD=
-変更後
+変更後:
 DB_CONNECTION=sqlite
 ```
 ```console
@@ -251,6 +251,6 @@ $ php artisan migrate //usersテーブルが自動生成される
 ```console
 $ php artisan serve
 ```
-認証機能が実装されていることが確認できる
+認証機能が実装されていることが確認できる。やったね！
 ![トップページ](app_top.jpg)
 ![新規登録画面](app_register.jpg)
