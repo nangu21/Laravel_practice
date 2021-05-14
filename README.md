@@ -87,8 +87,8 @@ $ php artisan serve
 認証機能が実装されていることが確認できる。
 ![トップページ](app_top.jpg)
 ![新規登録画面](app_register.jpg)
-ログインしてみると、JetstreamのDashboardが表示されました。ログアウト、プロフィール編集も実装済みでした。すごい。
-![Jetstreamダッシュボード](dashboard.jpg)
+ログインしてみると、JetstreamのDashboardが表示されました。ログアウト、プロフィール編集も実装済みでした。すごい！
+![Jetstreamダッシュボード](dash_board.jpg)
 
 ## 🍫Unitテストに関するメモ
 ### ¶前提事項
