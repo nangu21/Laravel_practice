@@ -114,6 +114,7 @@ $ cp -r ./vendor/laravel-lang/lang/src/ja ./resources/lang/
 ![日本語版_編集](ja_edit.jpg)
 
 **参考**<br>
+- [Jetstream公式ドキュメント](https://jetstream.laravel.com/2.x/introduction.html)
 - [3分でJetstreamを日本語化する方法(PHP JUNKIE)](https://php-junkie.net/framework/laravel/jetstream-ja/)
 
 ## 🍫Unitテストに関するメモ
