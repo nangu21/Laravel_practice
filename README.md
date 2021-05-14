@@ -90,6 +90,30 @@ $ php artisan serve
 ログインしてみると、JetstreamのDashboardが表示された。ログアウト、プロフィール編集も実装済み！すごい！
 ![Jetstreamダッシュボード](dash_board.jpg)
 
+**日本語化する**
+このままだと表示が全て英語で使い勝手が悪いので、[Laravel Lang](https://laravel-lang.github.io/lang/)という翻訳ファイルでJetstreamを日本語化します。
+- `config/app.php`ファイルの`Locale Configuration`部分を変更
+```app.php
+変更前:
+'locale' => 'en'
+
+変更後:
+'locale' => 'ja'
+```
+- 翻訳ファイルをインストールする
+```console
+$ composer require laravel-lang/lang:~8.0
+```
+- 作成されたja.jsonファイルとjaディレクトリをアプリケーションのlangディレクトリ内にコピーする
+```console
+$ cp ./vendor/laravel-lang/lang/json/ja.json ./resources/lang/
+$ cp -r ./vendor/laravel-lang/lang/src/ja ./resources/lang/
+```
+日本語に翻訳できているのが確認できた。すごい！
+![日本語版_登録](ja_register.jpg)
+![日本語版_編集](ja_edit.jpg)
+
+
 ## 🍫Unitテストに関するメモ
 ### ¶前提事項
 ```
