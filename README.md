@@ -118,7 +118,8 @@ $ cp -r ./vendor/laravel-lang/lang/src/ja ./resources/lang/
 日本語に翻訳できているのが確認できた。すごい！<br>
 ![日本語版_登録](ja_register.jpg)
 ![日本語版_編集](ja_edit.jpg)<br>
-- ※バリデーションメッセージ等、日本語化できていない文章も多いので、`lang/ja`及び`lang/ja.json`ファイルで個別に日本語訳が必要。
+- バリデーションメッセージ等、日本語化できていない文章も多いので、`lang/ja`及び`lang/ja.json`ファイルで個別に日本語訳が必要。
+![不十分な日本語訳例](ja_incorrect.jpg)<br>
 
 **ロゴを変更する**<br>
 Jetstreamのデフォルトの青丸ロゴを変更します。
