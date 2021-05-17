@@ -118,7 +118,7 @@ $ cp -r ./vendor/laravel-lang/lang/src/ja ./resources/lang/
 日本語に翻訳できているのが確認できた。すごい！<br>
 ![日本語版_登録](ja_register.jpg)
 ![日本語版_編集](ja_edit.jpg)<br>
-- ただし、バリデーションメッセージ等日本語化できていない文章も多いので、`lang/ja`及び`lang/ja.json`ファイルで個別に日本語訳が必要。<br>
+- ただし、バリデーションメッセージ等日本語化できていない文章も多いので、`resources/lang/ja`以下のファイル及び`resources/lang/ja.json`ファイルで個別に日本語訳が必要。<br>
 ![不十分な日本語訳例](ja_incorrect.jpg)<br>
 
 **ロゴを変更する**<br>
