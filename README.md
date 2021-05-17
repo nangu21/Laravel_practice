@@ -158,7 +158,7 @@ $ php artisan vendor:publish --tag=jetstream-views
 **参考**<br>
 - [Jetstream公式ドキュメント](https://jetstream.laravel.com/2.x/introduction.html)
 - [3分でJetstreamを日本語化する方法(PHP JUNKIE)](https://php-junkie.net/framework/laravel/jetstream-ja/)
-- [Laravel8におけるJetstreamのログイン画面の編集方法を覚える。(Qiita)](https://qiita.com/kubo_yu/items/a3bb15f0711e38dd71f7)
+- [【Laravel】初めての認証(Qiita)](https://qiita.com/manbolila/items/498aae00f3574c72f031)
 
 ## 🍫Unitテストに関するメモ
 ### ¶前提事項
