@@ -121,7 +121,7 @@ $ php artisan vendor:publish --tag=jetstream-views
 ```
 これで、`resources/views/vender`フォルダが作成されます。
 ![コンポーネント](components.jpg)
-- このうち、編集するファイルは`authentication-card-logo.blade.php`と`application-logo.blade.php`。元のコードをコメントアウトして、aタグ内にimgタグを記述します。今回は商用フリーのイラスト素材を提供してくれる[linustock](https://www.linustock.com/)から取得した画像リンクを使用します。fontawsomeを利用する場合は[コチラのQiita記事](https://qiita.com/manbolila/items/498aae00f3574c72f031)を参照。
+- このうち、編集するファイルは`authentication-card-logo.blade.php`と`application-mark.blade.php`。元のコードをコメントアウトして、aタグ内にimgタグを記述します。今回は商用フリーのイラスト素材を提供してくれる[linustock](https://www.linustock.com/)から取得した画像リンクを使用します。fontawsomeを利用する場合は[コチラのQiita記事](https://qiita.com/manbolila/items/498aae00f3574c72f031)を参照。
 ```authentication-card-logo.blade.php
 変更前：
 <a href="/">
@@ -136,10 +136,21 @@ $ php artisan vendor:publish --tag=jetstream-views
 　　<img src="https://www.linustock.com/images/uploads/2019/01/1547445472.png" alt="icon" width="120px" height="120px">
 </a>
 ```
+```application-mark.blade.php
+変更前：
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" {{ $attributes }}>
+  <path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5"/>
+  <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
+</svg>
+
+変更後：
+<img src="https://www.linustock.com/images/uploads/2019/01/1547445472.png" alt="icon" width="120px" height="120px">
+```
 
 **参考**<br>
 - [Jetstream公式ドキュメント](https://jetstream.laravel.com/2.x/introduction.html)
 - [3分でJetstreamを日本語化する方法(PHP JUNKIE)](https://php-junkie.net/framework/laravel/jetstream-ja/)
+- [Laravel8におけるJetstreamのログイン画面の編集方法を覚える。(Qiita)](https://qiita.com/kubo_yu/items/a3bb15f0711e38dd71f7)
 
 ## 🍫Unitテストに関するメモ
 ### ¶前提事項
