@@ -109,9 +109,17 @@ $ composer require laravel-lang/lang:~8.0
 $ cp ./vendor/laravel-lang/lang/json/ja.json ./resources/lang/
 $ cp -r ./vendor/laravel-lang/lang/src/ja ./resources/lang/
 ```
-日本語に翻訳できているのが確認できた。すごい！
+日本語に翻訳できているのが確認できた。すごい！<br>
 ![日本語版_登録](ja_register.jpg)
 ![日本語版_編集](ja_edit.jpg)
+
+**ロゴを変更する**<br>
+Jetstreamのデフォルトの青丸ロゴを変更します。
+- Jetstreamの各コンポーネントを編集可能の状態にする。
+```console
+$ php artisan vendor:publish --tag=jetstream-views
+```
+これで、`resources/views/vender`フォルダが作成されます。
 
 **参考**<br>
 - [Jetstream公式ドキュメント](https://jetstream.laravel.com/2.x/introduction.html)
