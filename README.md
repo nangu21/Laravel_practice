@@ -1,5 +1,11 @@
 # 🍕Laravelの練習
 ## 🧁Jetstream導入に関するメモ
+**やること**
+- Jetstreamの導入
+- Userテーブルの生成
+- 日本語化
+- ロゴの変更
+
 **環境**
 ```
 macOS Big Sur 11.3.1
@@ -146,7 +152,7 @@ $ php artisan vendor:publish --tag=jetstream-views
 変更後：
 <img src="https://www.linustock.com/images/uploads/2019/01/1547445472.png" alt="icon" width="120px" height="120px">
 ```
-![ロゴ変更後](login_newlogo.jpg)
+![ロゴ変更後](login_newlogo.jpg)<br>
 `authentication-card-logo.blade.php`の設定が無事反映されているのが確認できました。
 
 **参考**<br>
