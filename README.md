@@ -159,12 +159,14 @@ $ php artisan vendor:publish --tag=jetstream-views
 **その他メモ**
 - viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
 - モーダル実装は[Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)が便利。
+- フラッシュメッセージは[toastr](https://github.com/CodeSeven/toastr)がおしゃれ。
 
 **参考**<br>
 - [Jetstream公式ドキュメント](https://jetstream.laravel.com/2.x/introduction.html)
 - [3分でJetstreamを日本語化する方法(PHP JUNKIE)](https://php-junkie.net/framework/laravel/jetstream-ja/)
 - [【Laravel】初めての認証(Qiita)](https://qiita.com/manbolila/items/498aae00f3574c72f031)
 - [【Laravel8.x】419|PAGE EXPIREDが発生する(にゃんぶろぐ)](https://nyan.blog/2021/02/17/laravel-8-x%E3%80%8C419-page-expired%E3%80%8D%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%99%E3%82%8B/)
+- [Laravel:フラッシュメッセージを表示する(Qiita)](https://qiita.com/usaginooheso/items/6a99e565f16de2f9ddf7)
 
 ## 🍫Unitテストに関するメモ
 ### ¶前提事項
