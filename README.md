@@ -162,6 +162,7 @@ $ php artisan vendor:publish --tag=jetstream-views
 - viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
 - モーダル実装は[Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)が便利。
 - フラッシュメッセージは[toastr](https://github.com/CodeSeven/toastr)がおしゃれ。
+- ページネーションのデフォルトは[Tailwind](https://tailwindcss.com/)。カスタマイズは`Vendor\Laravel\FrameWork\Src\Illuminate\Pagination\Resources\Viwes\Tailwind.blade.php`で行う。
 - メール送受信には開発者ツール[MailHog](https://github.com/mailhog/MailHog)が便利。マニュアル通りインストールし、`php.ini`のパス変更が終わったら`.env`ファイルを編集する。
 
 ```.env
