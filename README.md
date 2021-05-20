@@ -127,7 +127,8 @@ Jetstreamのデフォルトの青丸ロゴを変更します。
 ```console
 $ php artisan vendor:publish --tag=jetstream-views
 ```
-これで、`resources/views/vender`フォルダが作成されます。
+
+これで、`resources/views/vender`フォルダが作成されます。<br>
 ![コンポーネント](components.jpg)
 - このうち、編集するファイルは`authentication-card-logo.blade.php`と`application-mark.blade.php`。元のコードをコメントアウトして、aタグ内にimgタグを記述します。今回は商用フリーのイラスト素材を提供してくれる[linustock](https://www.linustock.com/)から取得した画像リンクを使用します。fontawsomeを利用する場合は[コチラのQiita記事](https://qiita.com/manbolila/items/498aae00f3574c72f031)を参照。
 ```authentication-card-logo.blade.php
@@ -156,15 +157,45 @@ $ php artisan vendor:publish --tag=jetstream-views
 ```
 ![ロゴ変更後](login_newlogo.jpg)<br>
 `authentication-card-logo.blade.php`の設定が無事反映されているのが確認できました。<br>
+
 **メールアドレス認証**<br>
 メール送信による本人確認機能の実装をします。変更が必要なファイルは以下の通り。
+
+```
 - `.env`
 - `web.php`(ルート設定)
 - `Models\User.php`
 - `Resources\View\Auth\Verify-email.blade.php`(メール送信後の遷移画面)
 - `Providers\AuthServiceProvider.php`(送信メールの文章を変更)
 - `Vendor\Laravel\Framework\Src\Illuminate\Notifications\Resources\Views\Email.blade.php`(送信メール全体のレイアウト)
+```
 
+メール送受信には開発者ツールの[MailHog](https://github.com/mailhog/MailHog)を使います。マニュアル通りインストールと`php.ini`のパス変更が終わったら、`.env`ファイルを編集します。
+
+```.env
+MAIL_MAILER=smtp
+MAIL_HOST=0.0.0.0
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=送信アドレス
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+ターミナルからMailHogを立ち上げ、`http://0.0.0.0:8025/`にアクセスします。
+
+```console
+$ mailhog
+
+2021/05/20 19:48:59 Using in-memory storage
+2021/05/20 19:48:59 [SMTP] Binding to address: 0.0.0.0:1025
+[HTTP] Binding to address: 0.0.0.0:8025
+2021/05/20 19:48:59 Serving under http://0.0.0.0:8025/
+Creating API v1 with WebPath: 
+Creating API v2 with WebPath: 
+```
+![mailhog画面](mailhog.jpg)
 
 **その他メモ**
 - viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
