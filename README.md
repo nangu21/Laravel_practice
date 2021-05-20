@@ -158,19 +158,11 @@ $ php artisan vendor:publish --tag=jetstream-views
 ![ロゴ変更後](login_newlogo.jpg)<br>
 `authentication-card-logo.blade.php`の設定が無事反映されているのが確認できました。<br>
 
-**メールアドレス認証**<br>
-- メール送信による本人確認機能の実装をします。変更が必要なファイルは以下の通り。
-
-```
-・ `.env`
-・ `web.php`(ルート設定)
-・ `Models\User.php`
-・ `Resources\View\Auth\Verify-email.blade.php`(メール送信後の遷移画面)
-・ `Providers\AuthServiceProvider.php`(送信メールの文章を変更)
-・ `Vendor\Laravel\Framework\Src\Illuminate\Notifications\Resources\Views\Email.blade.php`(送信メール全体のレイアウト)
-```
-
-- メール送受信には開発者ツールの[MailHog](https://github.com/mailhog/MailHog)を使います。マニュアル通りインストールと`php.ini`のパス変更が終わったら、`.env`ファイルを編集します。
+**その他メモ**
+- viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
+- モーダル実装は[Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)が便利。
+- フラッシュメッセージは[toastr](https://github.com/CodeSeven/toastr)がおしゃれ。
+- メール送受信には開発者ツール[MailHog](https://github.com/mailhog/MailHog)が便利。マニュアル通りインストールし、`php.ini`のパス変更が終わったら`.env`ファイルを編集する。
 
 ```.env
 MAIL_MAILER=smtp
@@ -183,7 +175,7 @@ MAIL_FROM_ADDRESS=送信アドレス
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
-- ターミナルからMailHogを立ち上げ、`http://0.0.0.0:8025/`にアクセスします。
+ターミナルからMailHogを立ち上げ、`http://0.0.0.0:8025/`にアクセス。
 
 ```console
 $ mailhog
@@ -197,10 +189,15 @@ Creating API v2 with WebPath:
 ```
 ![mailhog画面](MailHog.jpg)
 
-**その他メモ**
-- viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
-- モーダル実装は[Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)が便利。
-- フラッシュメッセージは[toastr](https://github.com/CodeSeven/toastr)がおしゃれ。
+- メール送信による本人確認機能の実装に使うファイルは以下。
+```
+・ .env
+・ web.php(ルート設定)
+・ Models\User.php
+・ Resources\View\Auth\Verify-email.blade.php(メール送信後の遷移画面)
+・ Providers\AuthServiceProvider.php(送信メールの文章を変更)
+・ Vendor\Laravel\Framework\Src\Illuminate\Notifications\Resources\Views\Email.blade.php(送信メール全体のレイアウト)
+```
 
 **参考**<br>
 - [Jetstream公式ドキュメント](https://jetstream.laravel.com/2.x/introduction.html)
