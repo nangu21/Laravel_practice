@@ -156,6 +156,16 @@ $ php artisan vendor:publish --tag=jetstream-views
 ```
 ![ロゴ変更後](login_newlogo.jpg)<br>
 `authentication-card-logo.blade.php`の設定が無事反映されているのが確認できました。<br>
+**メールアドレス認証**<br>
+メール送信による本人確認機能の実装をします。変更が必要なファイルは以下の通り。
+- `.env`
+- `web.php`(ルート設定)
+- `Models\User.php`
+- `Resources\View\Auth\Verify-email.blade.php`(メール送信後の遷移画面)
+- `Providers\AuthServiceProvider.php`(送信メールの文章を変更)
+- `Vendor\Laravel\Framework\Src\Illuminate\Notifications\Resources\Views\Email.blade.php`(送信メール全体のレイアウト)
+
+
 **その他メモ**
 - viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
 - モーダル実装は[Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)が便利。
