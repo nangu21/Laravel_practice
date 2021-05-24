@@ -159,7 +159,8 @@ $ php artisan vendor:publish --tag=jetstream-views
 `authentication-card-logo.blade.php`の設定が無事反映されているのが確認できました。<br>
 
 **Eroquentリレーション**
-
+usersテーブルと他のテーブルのリレーションを設定します。ここでは、投稿情報を格納するテーブルをlikesテーブル、外部キーを`user_id`で設定しています。これによりlikesテーブルからusersテーブルへアクセスし、投稿がどのユーザーのものかを取り出せるようになります。
+![](/images/eroquent.jpg)
 
 **その他メモ**
 - viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
