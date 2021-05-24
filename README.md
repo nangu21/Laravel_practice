@@ -158,9 +158,24 @@ $ php artisan vendor:publish --tag=jetstream-views
 ![ロゴ変更後](/images/login_newlogo.jpg)<br>
 `authentication-card-logo.blade.php`の設定が無事反映されているのが確認できました。<br>
 
-**Eroquentリレーション**
-usersテーブルと他のテーブルのリレーションを設定します。ここでは、投稿情報を格納するテーブルをlikesテーブル、外部キーを`user_id`で設定しています。これによりlikesテーブルからusersテーブルへアクセスし、投稿がどのユーザーのものかを取り出せるようになります。
-![](/images/eroquent.jpg)
+**Eroquentリレーション**<br>
+usersテーブルと他のテーブルのリレーションを設定します。ここでは、投稿情報を格納するテーブルをlikesテーブル、外部キーを`user_id`で設定しています。これによりlikesテーブルからusersテーブルへアクセスし、「投稿がどのユーザーのものか」を取り出せるようになります。<br>
+
+![DBリレーションの図](/images/eroquent.jpg)<br>
+
+UserモデルとLikeモデルでリレーションを定義します。
+```User.php
+public function likes() {
+        return $this->hasMany('App\Models\Like');
+    }
+```
+```Like.php
+public function users() {
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
+```
+
+
 
 **その他メモ**
 - viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
@@ -211,6 +226,7 @@ Creating API v2 with WebPath:
 - [【Laravel8.x】419|PAGE EXPIREDが発生する(にゃんぶろぐ)](https://nyan.blog/2021/02/17/laravel-8-x%E3%80%8C419-page-expired%E3%80%8D%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%99%E3%82%8B/)
 - [Laravel:フラッシュメッセージを表示する(Qiita)](https://qiita.com/usaginooheso/items/6a99e565f16de2f9ddf7)
 - [Laravel8.x メール確認](https://readouble.com/laravel/8.x/ja/verification.html)
+- [Laravel8.x Eroquent:リレーション](https://readouble.com/laravel/8.x/ja/eloquent-relationships.html#one-to-many)
 - [Laravel JetstreamのEmail Verificationの使い方(CONSOLE DOT LOG)](https://blog.capilano-fw.com/?p=7969)
 
 ## 🍫Unitテストに関するメモ
