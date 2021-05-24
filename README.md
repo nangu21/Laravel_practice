@@ -116,10 +116,10 @@ $ cp ./vendor/laravel-lang/lang/json/ja.json ./resources/lang/
 $ cp -r ./vendor/laravel-lang/lang/src/ja ./resources/lang/
 ```
 日本語に翻訳できているのが確認できた。すごい！<br>
-![日本語版_登録](ja_register.jpg)
-![日本語版_編集](ja_edit.jpg)<br>
+![日本語版_登録](/images/ja_register.jpg)
+![日本語版_編集](/images/ja_edit.jpg)<br>
 - ただし、バリデーションメッセージ等で日本語化できていない、ないし日本語訳が不適切な文章も多いので、`resources/lang/ja`以下のファイル及び`resources/lang/ja.json`ファイルで個別に日本語訳の設定が必要です。<br>
-![不十分な日本語訳例](ja_incorrect.jpg)<br>
+![不十分な日本語訳例](/images/ja_incorrect.jpg)<br>
 
 **ロゴを変更する**<br>
 Jetstreamのデフォルトの青丸ロゴを変更します。
@@ -129,7 +129,7 @@ $ php artisan vendor:publish --tag=jetstream-views
 ```
 
 これで、`resources/views/vender`フォルダが作成されます。<br>
-![コンポーネント](components.jpg)
+![コンポーネント](/images/components.jpg)
 - このうち、編集するファイルは`authentication-card-logo.blade.php`と`application-mark.blade.php`。元のコードをコメントアウトして、aタグ内にimgタグを記述します。今回は商用フリーのイラスト素材を提供してくれる[linustock](https://www.linustock.com/)から取得した画像リンクを使用します。fontawsomeを利用する場合は[コチラのQiita記事](https://qiita.com/manbolila/items/498aae00f3574c72f031)を参照。
 ```authentication-card-logo.blade.php
 変更前：
@@ -155,7 +155,7 @@ $ php artisan vendor:publish --tag=jetstream-views
 変更後：
 <img src="https://www.linustock.com/images/uploads/2019/01/1547445472.png" alt="icon" width="120px" height="120px">
 ```
-![ロゴ変更後](login_newlogo.jpg)<br>
+![ロゴ変更後](/images/login_newlogo.jpg)<br>
 `authentication-card-logo.blade.php`の設定が無事反映されているのが確認できました。<br>
 
 **その他メモ**
@@ -188,7 +188,7 @@ $ mailhog
 Creating API v1 with WebPath: 
 Creating API v2 with WebPath: 
 ```
-![mailhog画面](MailHog.jpg)
+![mailhog画面](/images/MailHog.jpg)
 
 - メール送信による本人確認機能の実装に使うファイルは以下。
 ```
