@@ -158,6 +158,9 @@ $ php artisan vendor:publish --tag=jetstream-views
 ![ロゴ変更後](/images/login_newlogo.jpg)<br>
 `authentication-card-logo.blade.php`の設定が無事反映されているのが確認できました。<br>
 
+**Eroquentリレーション**
+
+
 **その他メモ**
 - viewファイルのformに@csrfがないと、「419|期限切れのページ」エラーが発生する。
 - モーダル実装は[Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)が便利。
