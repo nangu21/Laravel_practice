@@ -263,7 +263,13 @@ Available test(s):
 ```
 
 実行コマンドの変更
+テスト実行時に毎回`vendor/bin/phpunit`するのが面倒な場合は`composer.json`ファイルの`scripts`に`test: phpunit`を追加。
+`composer test`で実行できるようになる。
 
+```json:composer.json
+"scripts": {
+        "test": "phpunit", //追加
+```
 
 ### ¶APP_URLの設定によるエラー
 **アクセステスト**を実行したところ、次のようなエラーが返ってきた。
