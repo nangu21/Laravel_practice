@@ -277,7 +277,17 @@ Available test(s):
 Expected status code 200 but received 404.
 Failed asserting that 200 is identical to 404.
 ```
-404エラーは指定URLが
+指定URLが存在しないということなので、`routes/web.php`、`config/app.php`、`.env`ファイルあたりを確認してみる。`.env`ファイルのAPP_URLが本番URLになってしまっていたので、`http://localhost`に直して解決。
+```
+PHPUnit 9.5.5 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 00:00.240, Memory: 18.00 MB
+
+OK (2 tests, 2 assertions)
+```
+テスト通過しました。
 
 ### ¶Laravel8へのバージョンアップによるエラー
 指定アドレスへの**アクセステスト**を実行したところ、エラーが発生した。
