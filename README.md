@@ -238,6 +238,12 @@ phpunitのインストール
 $ composer require --dev 'phpunit/phpunit'
 ```
 
+テスト実行
+
+```
+$ vendor/bin/phpunit
+```
+
 test関連ファイル
 ```
 tests
@@ -250,7 +256,7 @@ tests
 ├ CreatesApplication.php
 └ TestCase.php
 ```
-このうち、`$ vendor/bin/phpunit`で実行されるテストは、オプションの`--list-tests`で確認できる。
+このうち、実行されるテスト群は、オプションの`--list-tests`で確認できる。
 ```console
 $ vendor/bin/phpunit --list-tests
 
@@ -268,17 +274,24 @@ Available test(s):
         "test": "phpunit",
 ```
 テスト実行時に毎回`vendor/bin/phpunit`するのが面倒な場合は`composer.json`ファイルの`scripts`に`test: phpunit`を追加。
-`composer test`で実行できるようになる。
+
+```terminal
+$ composer test
+```
+で実行できるようになる。
 
 ### ¶APP_URLの設定によるエラー
 **アクセステスト**を実行したところ、次のようなエラーが返ってきた。
+
 ```terminal
 1) Tests\Feature\ExampleTest::test_example
 Expected status code 200 but received 404.
 Failed asserting that 200 is identical to 404.
 ```
+
 指定URLが存在しないということなので、`routes/web.php`、`config/app.php`、`.env`ファイルあたりを確認してみる。`.env`ファイルのAPP_URLが本番URLになってしまっていたので、`http://localhost`に直して解決。
-```
+
+```terminal
 PHPUnit 9.5.5 by Sebastian Bergmann and contributors.
 
 ..                                                                  2 / 2 (100%)
@@ -287,7 +300,7 @@ Time: 00:00.240, Memory: 18.00 MB
 
 OK (2 tests, 2 assertions)
 ```
-テスト通過しました。
+無事テスト通過しました。
 
 ### ¶Laravel8へのバージョンアップによるエラー
 指定アドレスへの**アクセステスト**を実行したところ、エラーが発生した。
