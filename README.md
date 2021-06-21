@@ -283,7 +283,7 @@ $ composer test
 ### ¶APP_URLの設定によるエラー
 **アクセステスト**を実行したところ、次のようなエラーが返ってきた。
 
-```terminal
+```console
 1) Tests\Feature\ExampleTest::test_example
 Expected status code 200 but received 404.
 Failed asserting that 200 is identical to 404.
@@ -291,7 +291,7 @@ Failed asserting that 200 is identical to 404.
 
 指定URLが存在しないということなので、`routes/web.php`、`config/app.php`、`.env`ファイルあたりを確認してみる。`.env`ファイルのAPP_URLが本番URLになってしまっていたので、`http://localhost`に直して解決。
 
-```terminal
+```console
 PHPUnit 9.5.5 by Sebastian Bergmann and contributors.
 
 ..                                                                  2 / 2 (100%)
@@ -317,16 +317,19 @@ class HelloTest extends TestCase
  public function testHello() {
   $this->assertTrue(true);
   
+  //ステータスチェック $response = $this->get('/')->assertOK;と同じ
   $response = $this->get('/');
   $response->assertStatus(200);
 
   $response = $this->get('/home');
   $response->assertStatus(302);
   
+  //ファクトリでダミーレコードを作成し、モデル+アクセステスト
   $user = factory(User::class)->create();  //ここが問題
   $response = $this->actingAs($user)->get('/home');
   $response->assertStatus(200);
   
+  //存在しないページにちゃんと404を返しているか
   $response = $this->get('/no_route');
   $response->assertStatus(404);
  }
