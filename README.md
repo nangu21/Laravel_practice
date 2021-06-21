@@ -263,16 +263,21 @@ Available test(s):
 ```
 
 実行コマンドの変更
+```json:composer.json
+"scripts": {
+        "test": "phpunit",
+```
 テスト実行時に毎回`vendor/bin/phpunit`するのが面倒な場合は`composer.json`ファイルの`scripts`に`test: phpunit`を追加。
 `composer test`で実行できるようになる。
 
-```json:composer.json
-"scripts": {
-        "test": "phpunit", //追加
-```
-
 ### ¶APP_URLの設定によるエラー
 **アクセステスト**を実行したところ、次のようなエラーが返ってきた。
+```terminal
+1) Tests\Feature\ExampleTest::test_example
+Expected status code 200 but received 404.
+Failed asserting that 200 is identical to 404.
+```
+404エラーは指定URLが
 
 ### ¶Laravel8へのバージョンアップによるエラー
 指定アドレスへの**アクセステスト**を実行したところ、エラーが発生した。
